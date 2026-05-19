@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite the following paper."
+title: "Sodium-Ion Battery Electrolyte Dataset for MLIP Benchmarking"
+abstract: >-
+  Equilibrated atomistic configurations of sodium-ion (and reference Li+/K+)
+  battery electrolyte solutions in glyme and carbonate solvents, with matched
+  experimental densities at 298.2 K, intended as a benchmark for machine-learning
+  interatomic potential (MLIP) evaluation.
+authors:
+  - family-names: Kumar
+    given-names: Nitesh
+    affiliation: Lawrence Berkeley National Laboratory
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: Lai
+    given-names: Jianwei
+  - family-names: Mezerkor
+    given-names: Casey S.
+  - family-names: Wang
+    given-names: Jiaqi
+  - family-names: Wiaderek
+    given-names: Kamila M.
+    affiliation: Argonne National Laboratory
+  - family-names: Bazak
+    given-names: J. David
+    affiliation: Pacific Northwest National Laboratory
+  - family-names: Blau
+    given-names: Samuel M.
+    affiliation: Lawrence Berkeley National Laboratory
+  - family-names: Crumlin
+    given-names: Ethan J.
+    affiliation: Lawrence Berkeley National Laboratory
+license: CC-BY-4.0
+repository-code: "https://github.com/KMNitesh05/sodium-ion-battery-electrolyte-dataset"
+type: dataset
+keywords:
+  - machine-learning interatomic potentials
+  - MLIP
+  - benchmarking
+  - battery electrolytes
+  - sodium-ion batteries
+  - molecular dynamics
+  - OMol25
+  - UMA
+  - FAIRChem
+preferred-citation:
+  type: article
+  title: "Prediction and Experimental Verification of Electrolyte Solvation Structure from an OMol25-Trained Interatomic Potential"
+  authors:
+    - family-names: Kumar
+      given-names: Nitesh
+    - family-names: Lai
+      given-names: Jianwei
+    - family-names: Mezerkor
+      given-names: Casey S.
+    - family-names: Wang
+      given-names: Jiaqi
+    - family-names: Wiaderek
+      given-names: Kamila M.
+    - family-names: Bazak
+      given-names: J. David
+    - family-names: Blau
+      given-names: Samuel M.
+    - family-names: Crumlin
+      given-names: Ethan J.
+  year: 2026
+  url: "https://arxiv.org/abs/2603.20183"
+  identifiers:
+    - type: other
+      value: "arXiv:2603.20183"
+      description: arXiv preprint
