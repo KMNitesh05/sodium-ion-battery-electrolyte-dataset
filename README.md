@@ -2,7 +2,7 @@
 
 Equilibrated atomistic configurations of Na-ion (and reference Li⁺ / K⁺) battery electrolytes in glyme and carbonate solvents, paired with experimental densities at 298.2 K. Intended as a benchmark for evaluating machine-learning interatomic potentials (MLIPs) — most directly, NPT-predicted density vs. experiment.
 
-Configurations were equilibrated under NPT with OPLS-AA and the OMol25-trained UMA potential ([FAIRChem](https://github.com/facebookresearch/fairchem)) and accompany the paper:
+Configurations were equilibrated under NPT with OPLS-AA and the OMol25-trained UMA potential ([FAIRChem](https://github.com/facebookresearch/fairchem)).
 
 > **Prediction and Experimental Verification of Electrolyte Solvation Structure from an OMol25-Trained Interatomic Potential**
 > N. Kumar, J. Lai, C. S. Mezerkor, J. Wang, K. M. Wiaderek, J. D. Bazak, S. M. Blau, E. J. Crumlin (2026).
