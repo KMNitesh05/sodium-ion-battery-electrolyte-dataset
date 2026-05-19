@@ -44,12 +44,14 @@ sodium-ion-battery-electrolyte-dataset/
 
 | Category | Systems |
 |---|---|
-| **Pure solvents** (6) | DME, diglyme (DEGDME), triglyme (TEGDME), propylene carbonate (PC), diethylene glycol (DEG), dimethyl carbonate (DMC) |
+| **Pure solvents** (6) | DME (C₄H₁₀O₂), diglyme / DEGDME (C₆H₁₄O₃), **tetraglyme / TEGDME (C₁₀H₂₂O₅)**, propylene carbonate / PC (C₄H₆O₃), diethylene glycol / DEG (C₄H₁₀O₃), dimethyl carbonate / DMC (C₃H₆O₃) |
 | **0.1 M electrolytes** (8) | NaPF₆, NaOTf in DME, DEGDME, TEGDME, PC |
 | **0.5 M electrolyte** (1) | NaPF₆ in DME |
 | **1.0 M electrolytes** (10) | NaPF₆, NaOTf in DME / DEGDME / TEGDME / PC; NaTFSI in DME; KPF₆ in DME |
 
 All configurations: cubic / orthorhombic periodic cells, equilibrated under NPT at 298.2 K.
+
+> ⚠️ **Solvent abbreviation note.** "TEGDME" in this dataset refers to **tetraglyme (G4, C₁₀H₂₂O₅)** — that is, CH₃O(CH₂CH₂O)₄CH₃. The abbreviation is genuinely ambiguous in the literature (some authors use it for triglyme/G3); when comparing to other published values, ensure the experimental reference is also for the tetraglyme variant. The filename prefix `tgdme_` likewise refers to tetraglyme.
 
 ---
 
@@ -110,18 +112,7 @@ A more complete example (composition counts, density estimate from the starting 
 
 ## Important caveats — please read before benchmarking
 
-1. **`napf6_dme_1M.xyz` and `naotf_dme_1M.xyz`: sodium is written with element symbol `N`, not `Na`.**
-   The `comment="1 M LiPF6 in DME"` header in these two files is also incorrect — the actual systems are 1 M NaPF₆ and 1 M NaOTf in DME, generated from a Li-templated workflow where Li⁺ was relabeled to Na⁺ but the element column for the cation was left as `N`. The number of `N` atoms equals the number of Na⁺ ions; there is no separate nitrogen species in either system.
-
-   If you load these files for downstream MLIP evaluation, **remap `N → Na` first** so the potential sees the correct species:
-
-   ```python
-   from ase.io import read
-   atoms = read("data/napf6_dme_1M.xyz")
-   atoms.symbols = ["Na" if s == "N" else s for s in atoms.symbols]
-   ```
-
-   The `natfsi_dme_1M.xyz` file is **not** affected — it contains genuine N atoms from the TFSI⁻ anion alongside correctly-labeled Na⁺.
+1. **TEGDME = tetraglyme (G4, C₁₀H₂₂O₅)**, not triglyme. See the note in the systems table above. The pure-tetraglyme box contains 62 solvent molecules; corresponding electrolyte boxes contain 62 tetraglyme molecules plus salt.
 
 2. **Single equilibrated snapshots, not trajectories.** Each `.xyz` is one configuration after NPT equilibration with the OMol25-trained UMA potential. They are intended as starting points for the *user's own* MLIP NPT runs; the density benchmark requires the user to re-equilibrate with their MLIP and time-average. For full trajectory data, please contact the corresponding author.
 
