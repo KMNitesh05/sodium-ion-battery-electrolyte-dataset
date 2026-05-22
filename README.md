@@ -52,7 +52,7 @@ H  0.89  24.89  11.55
 ...
 ```
 
-Each file is a single equilibrated snapshot. Some files additionally carry per-atom momenta and forces, and per-frame energy/stress in the header; `ase.io.read` handles both transparently.
+Each file is a PBC-wrapped single equilibrated snapshot. Some files additionally carry per-atom momenta and forces, and per-frame energy/stress in the header; `ase.io.read` handles both transparently.
 
 ### Metadata (`data/na_ion_salt_concentrations_and_dens.csv`)
 
