@@ -40,3 +40,4 @@ results/
 *.dcd
 *.lammpstrj
 *.h5
+staging/
